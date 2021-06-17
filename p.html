@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="p.css">
+    <title>song</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="blackplay" class="blacklayer" onClick="check()">
+            <div class="maintext">
+                <h2 class="glow" onClick="changeSong()">MUSIC PLAYER</h2>
+                <p class="sn">FEEL THE MUSIC</p>
+            </div>
+            <audio id="song1" loop>
+                <source src="song/mashup.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="song2"  loop>
+                <source src="song/Thoda Thoda Pyaar Sidharth Malhotra,Neha Sharma Stebin Ben,Nilesh Ahuja,Kumaar.mp3" type="audio/mpeg">
+            </audio>
+            <div class="bottomcontrol">
+                <h3 id="currentsong">PLAY</h3>
+                <p>click to play a song......</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script>
+
+        var count=1;
+        currentsong="MASHUP"
+        var music="song1"
+        
+        function changeSong()
+        {
+            document.getElementById(music).pause()
+            count++;
+            if(music=="song1")
+            {
+                music="song2"
+                document.getElementById("currentsong").innerHTML="THODA THODA PYAR"
+                currentsong="THODA THODA PYAR"
+            }
+            else{
+                currentsong="MASHUP"
+                music="song1"
+                document.getElementById("currentsong").innerHTML="MASHUP"
+            }
+        }
+
+        function check()
+        {
+            
+            if (count%2!=0)
+            {
+                document.getElementById("currentsong").innerHTML=currentsong   
+                document.getElementById(music).play();
+            }
+            else
+            {
+                document.getElementById("currentsong").innerHTML="Paused"
+                document.getElementById(music).pause();
+            } 
+            count++;
+            
+        }
+    </script>
+
+
+</body>
+</html>
