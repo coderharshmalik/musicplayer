@@ -14,18 +14,19 @@
     <div class="container">
         <div id="blackplay" class="blacklayer" onClick="check()">
             <div class="maintext">
-                <h2 class="glow" onClick="changeSong()">MUSIC PLAYER</h2>
+                <h2 class="glow">MUSIC PLAYER</h2>
                 <p class="sn">FEEL THE MUSIC</p>
             </div>
             <audio id="song1" loop>
                 <source src="song/mashup.mp3" type="audio/mpeg">
             </audio>
             <audio id="song2"  loop>
-                <source src="song/Thoda Thoda Pyaar Sidharth Malhotra,Neha Sharma Stebin Ben,Nilesh Ahuja,Kumaar.mp3" type="audio/mpeg">
+                <source src="song/emashup.mp3" type="audio/mpeg">
             </audio>
             <div class="bottomcontrol">
                 <h3 id="currentsong">PLAY</h3>
-                <p>click to play a song......</p>
+                <p class="bc">click any where to play a song......</p>
+                <P class="change" onClick="changeSong()">NEXT ></P>
             </div>
         </div>
     </div>
@@ -45,8 +46,8 @@
             if(music=="song1")
             {
                 music="song2"
-                document.getElementById("currentsong").innerHTML="THODA THODA PYAR"
-                currentsong="THODA THODA PYAR"
+                document.getElementById("currentsong").innerHTML="E MASHUP"
+                currentsong="E MASHUP"
             }
             else{
                 currentsong="MASHUP"
